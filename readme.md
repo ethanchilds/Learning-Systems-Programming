@@ -21,3 +21,19 @@ This repository is both a way for me to start and a way for me to build. Two thi
 
 
 This repository is an ongoing record of my development as a systems engineer. Its goals, roadmap, and projects will evolve as I learn and gain experience.*
+
+## Learning C
+As I work through C with *Beej's Guide to C Programming*, I would like to work through some small projects to enforce what I am learning. In particular I would like to work through data structures and command line utilities.
+
+For the data structures I would like to work through a similar guide that is laid out in [Coding Interview University](https://github.com/jwasham/coding-interview-university#data-structures), not for it's interview focus, but for its comprehensive list of data structures and algorithms.
+
+I would like to implement:
+- [] Vector (mutable array with automatic resizing).
+- [] Linked List (with tail pointer and without).
+- [] Queue (with linked list and array. maybe a circular buffer too).
+- [] Hash Table.
+- [] Binary Search Tree.
+- [] Heap / Priority Queue / Binary Heap
+- [] Tries Maybe.
+- [] Merge Algorithms maybe.
+- [] other important algorithms maybe (dijkstra, union find, etc).
