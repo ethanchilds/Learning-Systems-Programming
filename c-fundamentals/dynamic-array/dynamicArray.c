@@ -7,39 +7,57 @@ typedef struct {
   int* numbers;  
 } dynamicArray;
 
+int resize(dynamicArray* array);
+dynamicArray* append(dynamicArray *array, int val);
+dynamicArray* insert(dynamicArray *array, int idx, int val);
+
+int main(void){
+  dynamicArray da = {.capacity=4, .size=0};
+  da.numbers = malloc(da.capacity * sizeof(*da.numbers));
+
+  for (int i = 0; i<4; i++){
+    append(&da, i);
+  }
+
+  free(da.numbers);
+}
+
+int resize(dynamicArray* array){
+  array->capacity = array->capacity*2;
+  int *new_numbers = realloc(array->numbers, array->capacity*(sizeof *array->numbers));
+
+  if (new_numbers == NULL){
+    printf("Failed to expand capacity\n");
+    return 0;
+  }
+  array->numbers = new_numbers;
+  return 1;
+}
+
 dynamicArray* append(dynamicArray *array, int val){
   if (array->size == array->capacity){
-    array->capacity = array->capacity*2;
-    int *new_numbers = realloc(array->numbers, array->capacity*(sizeof *array->numbers));
-
-    if (new_numbers == NULL){
-      printf("Failed to reallocate memory\n");
+    int res = resize(array);
+    if (res==0)
       return NULL;
-    }
-    array->numbers = new_numbers;
   }
   array->numbers[array->size] = val;
   array->size++;
   return array;
 }
 
-int main(void){
-  int valstoappend = 28;
-  dynamicArray da = {.capacity=4, .size=0};
-  da.numbers = calloc(da.capacity, sizeof(*da.numbers));
-
-
-  for (int i = 0; i<valstoappend; i++){
-    dynamicArray* tempda = append(&da, i);
-    if (tempda == NULL){
-      free(da.numbers);
-      return 1;
-    }
+dynamicArray* insert(dynamicArray *array, int idx, int val){
+  if (idx >= array->size){
+    return append(array, val);
   }
-
-  for (int i = 0; i<valstoappend; i++){
-    printf("%d\n", da.numbers[i]);
+  if (array->size == array->capacity){
+    int res = resize(array);
+    if (res == 0)
+      return NULL;
   }
-
-  free(da.numbers);
+  for (int i = array->size; i > idx; i--){
+    array->numbers[i] = array->numbers[i-1];
+  }
+  array->numbers[idx] = val;
+  array->size++;
+  return array;
 }
