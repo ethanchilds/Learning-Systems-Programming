@@ -2,12 +2,11 @@
 
 ## Overview
 
-This repository is a documentation of my journey to become a compentent systems programmer. Following the completion of my masters degree, I find myself at a crossroads of what I want to do and where I want to go with my career. When I began college I thought data science was the direction for me, and by some twist of fate I've found myself fascinated by distributed systems and the underlying technology that supports our everyday world.
+This repository is a documentation of my journey to become a competent systems programmer. Following the completion of my masters degree, I find myself at a crossroads of what I want to do and where I want to go with my career. When I began college I thought data science was the direction for me, and by some twist of fate I've found myself fascinated by distributed systems and the underlying technology that supports our everyday world.
 
-For as much as I've enjoyed my time learning distributed systems in my graduate program, I do not feel I have a mastery of this field, and at time it feels arcane to me. I would like to build, and yet I do not know what to build. I would like to start and yet, I do not know where to start.
+My overall goal with this repository is to try and develop my skill set beyond a theoretical understanding of systems into a matching technical depth. In order to go about this, I am starting with developing my understanding of C (What seems to be THE systems programming language to learn first). To avoid the pitfall of meaningless reading of C documentation, I will be developing quintessential data structures in C, command line utilities, and probably some small projects. As I make it past this introductory phase of C, I will start to develop programs that are bigger, medium-sized projects.
 
-This repository is both a way for me to start and a way for me to build. Two things I find very important for being able to do this work is documenting my journey and goal setting. This readme will outline my goals within this effort to become a systems programmer.
-
+Along with developing my skill set for myself, I would also like to document this process for others to see, so I will be updating readmes with notes on my thoughts during development.
 
 ## Goals
 
@@ -17,7 +16,7 @@ This repository is both a way for me to start and a way for me to build. Two thi
 - Develop a Better Understanding of Operating Systems: Processes, threads, concurrency, synchronization.
 - Network Programming: I would like to develop a deeper understanding of this from a practical standpoint. I've done all the theoretical course work, but would like technical depth.
 - Systems Engineering: Actually build common computer systems to develop a stronger understanding of what I work with on the daily.
-- Distributed Systems: Branch into the distributed systems world and likely pick up Goland along the way.
+- Distributed Systems: Branch into the distributed systems world and likely pick up Golang along the way.
 
 
 This repository is an ongoing record of my development as a systems engineer. Its goals, roadmap, and projects will evolve as I learn and gain experience.*
