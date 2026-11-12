@@ -1,13 +1,13 @@
 Working through primary linked list functions on my own, so this look like a naive solution at the moment.
 
 The particular functions I would like to work through are:
--[x] insert()
--[x] pushback()
--[x] pushfront()
--[x] delete()
--[x] popback()
--[x] popfront()
--[x] reverse()
+- [x] insert()
+- [x] pushback()
+- [x] pushfront()
+- [x] delete()
+- [x] popback()
+- [x] popfront()
+- [x] reverse()
 
 ## Thoughts as of 11/11/26
 
