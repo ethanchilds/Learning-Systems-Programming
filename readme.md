@@ -27,8 +27,8 @@ As I work through C with *Beej's Guide to C Programming*, I would like to work t
 For the data structures I would like to work through a similar guide that is laid out in [Coding Interview University](https://github.com/jwasham/coding-interview-university#data-structures), not for it's interview focus, but for its comprehensive list of data structures and algorithms.
 
 I would like to implement:
-- [] Vector (mutable array with automatic resizing).
-- [] Linked List (with tail pointer and without).
+- [x] Vector (mutable array with automatic resizing).
+- [x] Linked List (with tail pointer and without).
 - [] Queue (with linked list and array. maybe a circular buffer too).
 - [] Hash Table.
 - [] Binary Search Tree.
