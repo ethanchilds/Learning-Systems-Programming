@@ -18,9 +18,11 @@ int insert(linkedlist* ll, unsigned int idx, int val);
 int pushfront(linkedlist* ll, int val);
 int pushback(linkedlist* ll, int val);
 
-int delete(linkedlist*ll, unsigned int idx, int val);
+int delete(linkedlist*ll, unsigned int idx, int* deletedElem);
 int popfront(linkedlist* ll, int* poppedElem);
 int popback(linkedlist* ll, int* poppedElem);
+
+int reverse(linkedlist* ll);
 
 int main(void){
 
@@ -32,9 +34,10 @@ int main(void){
   insert(&ll, 4, 5);
   insert(&ll, 3, 6);
   printlist(ll);
-  printf("Len of list is: %zu\n", ll.len);
+  printf("----BREAK----\n");
+  reverse(&ll);
+  printlist(ll);
   freelist(&ll);
-  printf("Len of list is: %zu\n", ll.len);
   return 0;
 }
 
@@ -104,5 +107,58 @@ int pushback(linkedlist* ll, int val){
   return 0;
 }
 
-// int popfront(linkedlist* ll, int* poppedElem){
-// }
+int delete(linkedlist*ll, unsigned int idx, int* deletedElem){
+  if (idx < 0 || idx >= ll->len)
+    return -1;  
+
+  if (idx == 0){
+    node* temp = (ll->head)->next;
+    *deletedElem = (ll->head)->val;
+    free(ll->head);
+    ll->head = temp;
+    ll->len--;
+    return 0;
+  }
+
+  node* prev = ll->head;
+  node* temp = (ll->head)->next;
+  for (int i = 1; i<idx; i++){
+    prev = temp;
+    temp = temp->next;
+  }
+
+  prev->next = temp->next;
+  *deletedElem = temp->val;
+  free(temp);
+  ll->len--;
+  return 0;
+}
+
+int popfront(linkedlist* ll, int* poppedElem){
+  int res = delete(ll, ll->len-1, poppedElem);
+  if (res != 0)
+    return -1;
+  return 0;
+}
+
+int popback(linkedlist* ll, int* poppedElem){
+  int res = delete(ll, 0, poppedElem);
+  if (res != 0)
+    return -1;
+  return 0;
+}
+
+int reverse(linkedlist* ll){
+  node* prev = NULL;
+  node* curr = ll->head;
+
+  while (curr != NULL){
+    node* temp = curr->next;
+    curr->next = prev;
+    prev = curr;
+    curr = temp;
+  }
+  ll->head = prev;
+
+  return 0;
+}
