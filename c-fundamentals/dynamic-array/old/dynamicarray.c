@@ -1,39 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-
-typedef struct {
-  size_t capacity;
-  size_t size;
-  int* numbers;  
-} dynamicArray;
-
-int upsize(dynamicArray* array);
-int downsize(dynamicArray* array);
-int append(dynamicArray *array, int val);
-int insert(dynamicArray *array, int idx, int val);
-int delete(dynamicArray* array, int idx, int *deleted);
-int pop(dynamicArray* array, int* popItem);
-int removeElem(dynamicArray* array, int val);
-
-int main(void){
-  dynamicArray da = {.capacity=4, .size=0};
-  da.numbers = malloc(da.capacity * sizeof(*da.numbers));
-
-  for (int i = 0; i<4; i++){
-    append(&da, i);
-  }
-  insert(&da, 2, 5);
-  append(&da, 5);
-
-  int res = removeElem(&da, 5);
-  for (int i = 0; i<8; i++){
-    printf("%d\n", da.numbers[i]);
-  }
-  printf("Array size: %zu\n", da.size);
-  printf("Array capacity: %zu\n", da.capacity);
-
-  free(da.numbers);
-}
+#include "dynamicarray.h"
 
 int upsize(dynamicArray* array){
   array->capacity = array->capacity*2;
